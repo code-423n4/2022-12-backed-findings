@@ -1,4 +1,4 @@
-## Missing `address(0)`checks
+## Missing `address(0)` checks
 
  `_oracleSigner` and  `_quoteCurrency` variables in  could be set as `address(0)` as mistake that could NOT be fixed later.
 
