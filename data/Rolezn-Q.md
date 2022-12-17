@@ -24,8 +24,9 @@ Total: 7 contexts over 6 issues
 | [NC&#x2011;7](#NC&#x2011;7) | Use `bytes.concat()` | 2 |
 | [NC&#x2011;8](#NC&#x2011;8) | Use `delete` to Clear Variables | 2 |
 | [NC&#x2011;9](#NC&#x2011;9) | Use Underscores for Number Literals  | 1 |
+| [NC&#x2011;10](#NC&#x2011;10) | No full coverage of in scope files  | 1 |
 
-Total: 40 contexts over 9 issues
+Total: 41 contexts over 10 issues
 
 ## Low Risk Issues
 
@@ -575,6 +576,14 @@ https://github.com/with-backed/papr/tree/9528f2711ff0c1522076b9f93fba13f88d5bd5e
 
 
 
+### <a href="#Summary">[NC&#x2011;10]</a><a name="NC&#x2011;10">  No full coverage of in scope files
 
+It is recommended to have full coverage on all in scope files of the project.
 
+#### <ins>Proof Of Concept</ins>
 
+As stated in the scope of the project:
+
+| |SLOC|Coverage|
+|-|:-|:-:|
+| Total (over 14 files): | 1043  |  83.33% |
