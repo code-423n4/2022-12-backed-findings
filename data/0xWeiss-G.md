@@ -1,18 +1,10 @@
-### Cheaper to use abi.encode() than string.concat in lines:
+### 1  Cheaper to use abi.encode() than string.concat in lines:
+###### Replace string.concat for abi.encode
 https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprToken.sol#L19
 
-
-
-
-
-###sketchy check more this transfer https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol#L546
-
-
-
-####uint packing https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/ReservoirOracleUnderwriter.sol#L35-L38
-
-
-
+### 2 uint packing 
+###### Change the bits from the units to save gas and pack them in the same slot
+https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/ReservoirOracleUnderwriter.sol#L35-L38
 
 ### Don't Initialize Variables with Default Value
 
