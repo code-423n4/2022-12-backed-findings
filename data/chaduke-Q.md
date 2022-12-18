@@ -14,3 +14,15 @@ the following zero address and NOT-THIS-contract check is necessary; othersise, 
 if(sendTo == address(0) || sendTo ==  address(this)) revert InValidAddress();
 
 ```
+
+QA4: https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol#L365
+We need to check there are no duplicate collateral in ``CollateralAllowedConfig[]``, othersise, they might have conflicting ``allowed`` and create ambiguity. 
+
+QA5: https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol#L225-L227
+Wrong calculation of swap fee, it should be based on ``
+
+QA6. https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol#L514
+https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol#L203
+
+
+Use safeTransferFrom and safeTransfer instead of Transfer and TransferFrom since 1) Some ERC20 might not return a bool valune; 2) some ERC20 might not revert for failure and return a bool valu
