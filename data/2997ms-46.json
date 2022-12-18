@@ -1,0 +1,8 @@
+{
+  "contest": 196,
+  "handle": "2997ms",
+  "risk": "",
+  "title": "Set remain to 0 if totalOwed > debtCached",
+  "issueId": 46,
+  "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/46"
+}
