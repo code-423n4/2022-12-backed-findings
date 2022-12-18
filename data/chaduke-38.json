@@ -1,0 +1,8 @@
+{
+  "contest": 196,
+  "handle": "chaduke",
+  "risk": "",
+  "title": "Wrong calculation of excess and  neededToSaveVault in function purchaseLiquidationAuctionNFT()",
+  "issueId": 38,
+  "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/38"
+}
