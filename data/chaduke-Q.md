@@ -23,6 +23,10 @@ Wrong calculation of swap fee, it should be based on ``
 
 QA6. https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol#L514
 https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol#L203
+Use safeTransferFrom and safeTransfer instead of Transfer and TransferFrom since 1) Some ERC20 might not return a bool valune; 2) some ERC20 might not revert for failure and return a bool value.
+
+QA7: https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol#L188
+WE need to check and make sure ``params.swapFeeBips < BIPS_ONE``.
+Same check is needed for https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol#L213
 
 
-Use safeTransferFrom and safeTransfer instead of Transfer and TransferFrom since 1) Some ERC20 might not return a bool valune; 2) some ERC20 might not revert for failure and return a bool valu
