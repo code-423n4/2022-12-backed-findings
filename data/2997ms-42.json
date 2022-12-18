@@ -1,0 +1,8 @@
+{
+  "contest": 196,
+  "handle": "2997ms",
+  "risk": "",
+  "title": "No range check for _targetMarkRatioMax and _targetMarkRatioMin",
+  "issueId": 42,
+  "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/42"
+}
