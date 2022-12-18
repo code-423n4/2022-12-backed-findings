@@ -1,3 +1,7 @@
+### 1 Instead of immutable change it to constant because you are not initializing the values in the constructor:
+https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol#L41-L54
+
+
 ### Unsafe ERC20 Operation(s)
 
 #### Impact
