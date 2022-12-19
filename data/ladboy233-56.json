@@ -1,0 +1,8 @@
+{
+  "contest": 196,
+  "handle": "ladboy233",
+  "risk": "",
+  "title": "Implementation in PaprController.sol does not match the documentation: excess fee during liquidation is burned instead of giving to the protocol",
+  "issueId": 56,
+  "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/56"
+}
