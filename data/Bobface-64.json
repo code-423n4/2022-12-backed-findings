@@ -1,0 +1,8 @@
+{
+  "contest": 196,
+  "handle": "Bobface",
+  "risk": "",
+  "title": "Missing deadline checks allow pending transactions to be maliciously executed",
+  "issueId": 64,
+  "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/64"
+}
