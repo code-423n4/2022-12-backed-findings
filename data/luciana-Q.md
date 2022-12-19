@@ -25,6 +25,20 @@ The `sendPaprFromAuctionFees` function does not validate the `to` address. Despi
 ---
 ## [Info] Missing `address(0)` checks
 
+The `onERC721Received(...)` function in `PaprController` contract should validate: 
+- `from` 
+- `request.proceedsTo`
+- `request.swapParams.swapFeeTo`
+
+
+
+
+```solidity
+function onERC721Received(address from, address, uint256 _id, bytes calldata data) 
+```
+
+
+
  `_oracleSigner` and  `_quoteCurrency` variables in  could be set as `address(0)` as mistake that could NOT be fixed later.
 
 [`ReservoirOracleUnderwriter.sol#L51-L54`](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/ReservoirOracleUnderwriter.sol#L51-L54)
