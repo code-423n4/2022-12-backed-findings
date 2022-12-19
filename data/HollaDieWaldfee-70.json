@@ -1,0 +1,8 @@
+{
+  "contest": 196,
+  "handle": "HollaDieWaldfee",
+  "risk": "",
+  "title": "PaprController.sol: Auction price can be sent to borrower without fully repaying debt",
+  "issueId": 70,
+  "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/70"
+}
