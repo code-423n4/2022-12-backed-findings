@@ -9,9 +9,8 @@
 | [G-005] | internal functions only called once can be inlined to save gas                                                                     |     6     |
 | [G-006] | Usage of `uints/ints` smaller than 32 bytes (256 bits) incurs overhead                                                             |     1     |
 | [G-007] | Replace modifier with function                                                                                                     |     1     |
-| [G-008] | Expressions that cannot be overflowed can be unchecked                                                                             |     1     |
-| [G-009] | Use named returns for local variables where it is possible.                                                                        |     1     |
-| [G-010] | revert operator should be in the code as early as reasonably possible                                                              |     1     |
+| [G-008] | Use named returns for local variables where it is possible.                                                                        |     1     |
+| [G-009] | revert operator should be in the code as early as reasonably possible                                                              |     1     |
 
 ## [G-001] `storage` pointer to a structure is cheaper than copying each value of the structure into `memory`, same for `array` and `mapping`
 
@@ -122,7 +121,7 @@ Same as description
 
 ### Impact
 
-The instances below point to the second+ access of a value inside a mapping/array, within a function. Caching a mapping's value in a local storage or calldata variable when the value is accessed multiple times, saves ~42 gas per access due to not having to recalculate the key's keccak256 hash (Gkeccak256 - 30 gas) and that calculation's associated stack operations. Caching an array's struct avoids recalculating the array offsets into `memory/calldata` 
+The instances below point to the second+ access of a value inside a mapping/array, within a function. Caching a mapping's value in a local storage or calldata variable when the value is accessed multiple times, saves ~42 gas per access due to not having to recalculate the key's keccak256 hash (Gkeccak256 - 30 gas) and that calculation's associated stack operations. Caching an array's struct avoids recalculating the array offsets into `memory/calldata`
 
 ### Findings
 
@@ -230,31 +229,7 @@ Total:1
 
 Same as description
 
-## [G-008] Expressions that cannot be overflowed can be unchecked
-
-### Impact
-
-There are several cases that do not lead to overflow and can be unchecked.
-
-- a previous push in array
-- If an underflow occurs, the next statement will revert
-- There is a check in the previous code.
-
-### Findings
-
-Total:1
-
-[src/libraries/OracleLibrary.sol#L47](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6//src/libraries/OracleLibrary.sol#L47)
-
-```solidity
-47:    if (delta < 0 && (delta % (twapDuration) != 0)) {
-```
-
-### Recommendation
-
-Same as description
-
-## [G-009] Use named returns for local variables where it is possible.
+## [G-008] Use named returns for local variables where it is possible.
 
 ### Impact
 
@@ -270,7 +245,7 @@ Total:1
 60:    uint256 price = super._auctionCurrentPrice(id, startTime, auction);
 ```
 
-## [G-010] revert operator should be in the code as early as reasonably possible
+## [G-009] revert operator should be in the code as early as reasonably possible
 
 ### Impact
 
