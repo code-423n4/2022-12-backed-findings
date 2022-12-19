@@ -1,19 +1,3 @@
-## [Info] Missing `address(0)` checks
-
- `_oracleSigner` and  `_quoteCurrency` variables in  could be set as `address(0)` as mistake that could NOT be fixed later.
-
-[`ReservoirOracleUnderwriter.sol#L51-L54`](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/ReservoirOracleUnderwriter.sol#L51-L54)
-
-The constructor is presented below:
-
-```solidity
-    constructor(address _oracleSigner, address _quoteCurrency) {
-        oracleSigner = _oracleSigner;
-        quoteCurrency = _quoteCurrency;
-    }
-```
-
----
 The `from` variable can be set `address(0)` in `onERC721Received(...) function.
 
 [`PaprController.sol#L159`](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol#L159)
@@ -37,3 +21,21 @@ The `sendPaprFromAuctionFees` function does not validate the `to` address. Despi
     }
 ```
 *Recommendation: * The function should check if the `to` local variable is a valid address.
+
+---
+## [Info] Missing `address(0)` checks
+
+ `_oracleSigner` and  `_quoteCurrency` variables in  could be set as `address(0)` as mistake that could NOT be fixed later.
+
+[`ReservoirOracleUnderwriter.sol#L51-L54`](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/ReservoirOracleUnderwriter.sol#L51-L54)
+
+The constructor is presented below:
+
+```solidity
+    constructor(address _oracleSigner, address _quoteCurrency) {
+        oracleSigner = _oracleSigner;
+        quoteCurrency = _quoteCurrency;
+    }
+```
+
+---
