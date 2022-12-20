@@ -1,0 +1,8 @@
+{
+  "contest": 196,
+  "handle": "ladboy233",
+  "risk": "",
+  "title": "Hardcode liquidationAuctionMinSpacing as 2 days can create bad debt",
+  "issueId": 96,
+  "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/96"
+}
