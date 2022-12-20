@@ -1,0 +1,8 @@
+{
+  "contest": 196,
+  "handle": "0x52",
+  "risk": "",
+  "title": "Adversary can break controller deployment completely by deploying papr-underlying pool beforehand",
+  "issueId": 75,
+  "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/75"
+}
