@@ -1,0 +1,8 @@
+{
+  "contest": 196,
+  "handle": "8olidity",
+  "risk": "",
+  "title": "The transfer of papr from the contract by the administrator will cause purchaseLiquidationAuctionNFT() to not function properly",
+  "issueId": 87,
+  "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/87"
+}
