@@ -116,3 +116,48 @@ Use uint256(1) and uint256(2) for true/false to avoid a Gwarmaccess (100 gas) fo
     }
 ```
 
+## [YO GAS-4] USE CUSTOM ERRORS RATHER THAN REVERT()/REQUIRE() STRINGS TO SAVE GAS
+
+### Handle
+yosuke
+
+## Vulnerability details
+### Impact
+
+### Proof of Concept
+https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol#L236
+https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol#L245
+
+
+### Recommended Mitigation Steps
+```solidity=
+    error WrongCaller();
+    error Amount1DeltaIsNotGreaterThanZero();
+
+    function uniswapV3SwapCallback(int256 amount0Delta, int256 amount1Delta, bytes calldata _data) external {
+        if (msg.sender != address(pool)) {
+            revert WrongCaller();
+        }
+
+        bool isUnderlyingIn;
+        uint256 amountToPay;
+        if (amount0Delta > 0) {
+            amountToPay = uint256(amount0Delta);
+            isUnderlyingIn = token0IsUnderlying;
+        } else {
+            if(!(amount1Delta > 0)) revert Amount1DeltaIsNotGreaterThanZero(); // swaps entirely within 0-liquidity regions are not supported
+
+            amountToPay = uint256(amount1Delta);
+            isUnderlyingIn = !(token0IsUnderlying);
+        }
+
+        if (isUnderlyingIn) {
+            address payer = abi.decode(_data, (address));
+            underlying.safeTransferFrom(payer, msg.sender, amountToPay);
+        } else {
+            (address account, ERC721 asset, ReservoirOracleUnderwriter.OracleInfo memory oracleInfo) =
+                abi.decode(_data, (address, ERC721, ReservoirOracleUnderwriter.OracleInfo));
+            _increaseDebt(account, asset, msg.sender, amountToPay, oracleInfo);
+        }
+    }
+```
