@@ -1,0 +1,8 @@
+{
+  "contest": 196,
+  "handle": "unforgiven",
+  "risk": "",
+  "title": "Function startLiquidationAuction() removes auctions NFT from user's collaterals and it would cause more of user's NFTs get liquidated after space time passed while user may have enough collateral(considering Auctioned NFTS)",
+  "issueId": 159,
+  "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/159"
+}
