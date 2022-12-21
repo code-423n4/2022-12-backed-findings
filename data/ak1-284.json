@@ -1,0 +1,8 @@
+{
+  "contest": 196,
+  "handle": "ak1",
+  "risk": "",
+  "title": "NFT owner only is allowed for liquidation, this may not work for all the cases, the debt can be insolvent",
+  "issueId": 284,
+  "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/284"
+}
