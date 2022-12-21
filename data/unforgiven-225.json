@@ -1,0 +1,8 @@
+{
+  "contest": 196,
+  "handle": "unforgiven",
+  "risk": "",
+  "title": "_removeCollateral() don't use updated value of user collateral count to calculate max debt and if user add some collaterals during NFT safeTransfer hook, contract won't consider it and would revert because of the exceeding debt",
+  "issueId": 225,
+  "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/225"
+}
