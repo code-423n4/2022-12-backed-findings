@@ -20,4 +20,9 @@ https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e
 https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol#L382
 https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol#L386
 
- 
+2. `sendTo` can be `address(0)`
+
+the address `sendTo` can be `address(0)` which is the recipient of collateral/NFT which will result in the asset being burned and potential loss of funds in the following functions:
+
+https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol#L267
+https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol#L110
