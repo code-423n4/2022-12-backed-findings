@@ -106,6 +106,32 @@ For instance, the code block below may be refactored as follows:
          remaining = debtCached - price;
      }
 ```
+## Unneeded if blocks
+`block.timestamp` ticks down or increments every second. the likelihood of `_lastUpdated == block.timestamp` is almost zero unless this condition is checked when `_lastUpdated` has been assigned `block.timestamp` in the same connected function calls. As such, consider removing them to save gas both on deployment and function calls.
+
+Here are the instances entailed:
+
+[File: UniswapOracleFundingRateController.sol#L46-L48](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/UniswapOracleFundingRateController.sol#L46-L48)
+
+```diff
+ -       if (_lastUpdated == block.timestamp) {
+ -           return _target;
+ -       }
+```
+[File: UniswapOracleFundingRateController.sol#L64-L66](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/UniswapOracleFundingRateController.sol#L64-L66)
+
+```diff
+-        if (_lastUpdated == block.timestamp) {
+-            return _target;
+-        }
+```
+[File: UniswapOracleFundingRateController.sol#L73-L75](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/UniswapOracleFundingRateController.sol#L73-L75)
+
+```diff
+-        if (_lastUpdated == block.timestamp) {
+-            return _mark(_lastTwapTick);
+-        }
+```
 ## Non-strict inequalities are cheaper than strict ones
 In the EVM, there is no opcode for non-strict inequalities (>=, <=) and two operations are performed (> + = or < + =).
 
