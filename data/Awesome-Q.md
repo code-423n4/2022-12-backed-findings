@@ -1,20 +1,4 @@
-# 1. Unspecific Compiler Version Pragma
-
-It is generally not recommended to use floating pragmas (i.e. pragmas that do not specify a specific compiler version) in contracts that are not intended to be used as libraries.
-
-This is because using floating pragmas in application contracts can pose a security risk.
-
-For example, a known vulnerable compiler version may be selected by mistake, or security tools might revert to an older compiler version that produces a different EVM compilation than the one intended to be deployed on the blockchain.
-
-To avoid these potential issues, it is recommended to specify a specific compiler version in your pragmas.
-
-As an example, instead of using a floating pragma like `pragma solidity ^0.8.0;`, it is better to use a concrete compiler version like `pragma solidity 0.8.4;`.
-
-This is present in 1 file:
-
-- [ReservoirOracleUnderwriter.sol#L2](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/ReservoirOracleUnderwriter.sol#L2)
-
-# 2. inadequate NatSpec
+# 1. inadequate NatSpec
 
 Solidity contracts can use the Ethereum Natural Language Specification Format (NatSpec) to provide detailed documentation for functions, return variables, and other elements of the contract. This is done using a special type of comment within the contract code.
 
@@ -37,7 +21,7 @@ This is present in 2 files:
 - [PaprController.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol)
 - [PaprToken.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprToken.sol)
 
-# 3. Typos
+# 2. Typos
 
 1. [PaprController.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol)
 
@@ -86,9 +70,9 @@ This is present in 2 files:
      - Consider changing `totalCollateraValue` To `totalCollateralValue`
 
 
-# 4. Instead of assigning a value of zero, use the `delete` operator to clear variables.
+# 3. Use the `delete` operator to clear variables, instead of assigning a value of zero.
 
-To clear variables, use the `delete` operator rather than assignment to zero. This conveys the intention more clearly and is more idiomatic.
+To clear variables, use the `delete` operator rather than assigning to zero. This conveys the intention more clearly and is more idiomatic.
 
 There is one instance where this can be implemented in the code:
 
