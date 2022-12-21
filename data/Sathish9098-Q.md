@@ -69,10 +69,6 @@ require(collateralArr.length >0);
 
 
 
-NC-1	Missing checks for address(0) when assigning values to address state variables	3
-NC-2	require() / revert() statements should have descriptive reason strings	11
-NC-3	Event is missing indexed fields	7
-NC-4	Functions not used internally could be marked external
 
-L-1	Unsafe ERC20 operation(s)	7
-L-2	Unspecific compiler version pragma	10
+
+
