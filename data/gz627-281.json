@@ -1,0 +1,8 @@
+{
+  "contest": 196,
+  "handle": "gz627",
+  "risk": "",
+  "title": "PaprTokens may stuck in the contract, `rescue` functionality is desirable",
+  "issueId": 281,
+  "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/281"
+}
