@@ -1,0 +1,8 @@
+{
+  "contest": 196,
+  "handle": "8olidity",
+  "risk": "",
+  "title": "`increaseDebt()` should check if the asset is in isAllowed",
+  "issueId": 175,
+  "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/175"
+}
