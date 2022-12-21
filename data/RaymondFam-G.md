@@ -34,6 +34,17 @@ For instance, the code block below may be refactored as follows:
 +        _auctionStartTime = auctionState[id].startTime;
     }
 ```
+## Division by 2
+A division by 2 can be calculated by shifting one to the right since the div opcode uses 5 gas while SHR opcode uses 3 gas. Additionally, Solidity's division operation also includes a division-by-0 prevention by pass using shifting.
+
+Consider using >>1 by having the code instance below refactored as follows:
+
+[File: UniswapHelpers.sol#L111](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/libraries/UniswapHelpers.sol#L111)
+
+```diff
+-        return TickMath.getSqrtRatioAtTick(TickMath.getTickAtSqrtRatio(uint160((token1ONE << 96) / token0ONE)) / 2);
++        return TickMath.getSqrtRatioAtTick(TickMath.getTickAtSqrtRatio(uint160((token1ONE << 96) / token0ONE)) >> 1);
+```
 ## `||` costs less gas than its equivalent `&&`
 Rule of thumb: `(x && y)` is `(!(!x || !y))`
 
