@@ -1,0 +1,8 @@
+{
+  "contest": 196,
+  "handle": "IllIllI",
+  "risk": "",
+  "title": "Forcing `IERC20` when calling `transfer()` reverts when used with some ERC20 tokens",
+  "issueId": 126,
+  "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/126"
+}
