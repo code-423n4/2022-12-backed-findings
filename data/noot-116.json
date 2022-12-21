@@ -1,0 +1,8 @@
+{
+  "contest": 196,
+  "handle": "noot",
+  "risk": "",
+  "title": "PaprController underlying asset can be drained via buyAndReduceDebt",
+  "issueId": 116,
+  "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/116"
+}
