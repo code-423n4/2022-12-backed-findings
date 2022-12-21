@@ -34,3 +34,12 @@ If you find instances where a ternary operation can be used instead of an `if-el
 There is 1 instance of this:
 
 - [PaprController.sol#L283-L288](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol#L283-L288)
+
+# 5. Maximize gas savings in Solidity with `payable` functions
+
+Marking functions as `payable` can be slightly cheaper than using non-`payable` functions, because the Solidity compiler inserts a check into non-`payable` functions that requires `msg.value` to be zero.
+
+This optimization can save a small amount of gas, but it is important to be aware of the security considerations involving Ether held in contracts that it introduces.
+More information on this topic can be found in the [Solidity Compiler Discussion](https://github.com/ethereum/solidity/issues/12539).
+
+The affected line of code is located at [PaprController.sol#L350](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol#L350).
