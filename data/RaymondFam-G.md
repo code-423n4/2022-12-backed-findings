@@ -107,7 +107,7 @@ For instance, the code block below may be refactored as follows:
      }
 ```
 ## Unneeded if blocks
-`block.timestamp` ticks down or increments every second. the likelihood of `_lastUpdated == block.timestamp` is almost zero unless this condition is checked when `_lastUpdated` has been assigned `block.timestamp` in the same connected function calls. As such, consider removing them to save gas both on deployment and function calls.
+`block.timestamp` ticks down or increments every second. The likelihood of `_lastUpdated == block.timestamp` is almost zero unless this condition is checked when `_lastUpdated` has been assigned `block.timestamp` in the same connected function calls, which is not seen throughout the protocol's code bases. As such, consider removing them to save gas both on deployment and function calls.
 
 Here are the instances entailed:
 
