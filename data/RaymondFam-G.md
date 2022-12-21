@@ -70,6 +70,25 @@ Here are some of the instances entailed:
 
         IPaprController.Collateral memory collateral = IPaprController.Collateral(ERC721(msg.sender), _id);
 ```
+## Avoid late checks
+Checks should be as early as possible to avoid wasting more gas than is needed when a function reverts. 
+
+For instance, the if block below should come before transferring the NFT collateral to `sendTo`:
+
+[File: PaprController.sol#L444-L451](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol#L444-L451)
+
+ ```diff
+-        collateral.addr.safeTransferFrom(address(this), sendTo, collateral.id);
+
+        uint256 debt = _vaultInfo[msg.sender][collateral.addr].debt;
+        uint256 max = _maxDebt(oraclePrice * newCount, cachedTarget);
+
+        if (debt > max) {
+            revert IPaprController.ExceedsMaxDebt(debt, max);
+        }
+
++        collateral.addr.safeTransferFrom(address(this), sendTo, collateral.id);
+```
 ## Ternary over `if ... else`
 Using ternary operator instead of the if else statement saves gas.
 
