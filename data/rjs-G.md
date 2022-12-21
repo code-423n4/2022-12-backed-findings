@@ -1,12 +1,18 @@
 # Introduction
 
-_observations on the codebase, listing of which contracts/functions would benefit most from optimisation_
+The Papr codebase is well-written and contains many standard gas optimization techniques.
+
+This report does not list items already covered in the [C4udit report](https://gist.github.com/itsmetechjay/c5eb7f988735188a7bc9005f7b54a9cf), as per C4 rules.
 
 # Summary
 
-| ID  | Finding | Instances |
-| --- | ------- | --------- |
-| G-01    |         |           |
+| ID   | Finding                                                     | Instances |
+| ---- | ----------------------------------------------------------- | --------- |
+| G-01 | Cache access of mappings and arrays / use storage pointer   | 1         |
+| G-02 | Use named return variables                                  | 2         |
+| G-03 | Redundant return value                                      | 1         |
+| G-04 | Use `unchecked` on hot paths where variables can't overflow | 1         |
+| G-05     |Use `++` instead of `+= 1`                                                             |  1         |
 
 # Gas Optimization Findings
 
@@ -111,7 +117,9 @@ src/PaprController.sol
 558:     }
 ```
 
-### Not recommended
+### 2nd Instance
+
+Possibility not recommended -- it would take `1400/2 = 700` invocations to pay off the extra deployment costs.
 
 Before:
 ```solidity
@@ -160,8 +168,6 @@ src/NFTEDA/extensions/NFTEDAStarterIncentive.sol
 ## \[G-03] Redundant return value
 
 In the following code, `twat` is already a named return variable and does not need to be explicitly returned.
-
-### Example
 
 Before:
 
