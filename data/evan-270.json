@@ -1,0 +1,8 @@
+{
+  "contest": 196,
+  "handle": "evan",
+  "risk": "",
+  "title": "PaprController should not pay the swap fee in buyAndReduceDebt ",
+  "issueId": 270,
+  "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/270"
+}
