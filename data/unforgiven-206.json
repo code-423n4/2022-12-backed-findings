@@ -1,0 +1,8 @@
+{
+  "contest": 196,
+  "handle": "unforgiven",
+  "risk": "",
+  "title": "buyAndReduceDebt() tries to transfer swapFee in underlying token from contract address while it should be from user address",
+  "issueId": 206,
+  "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/206"
+}
