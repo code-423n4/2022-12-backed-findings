@@ -1,0 +1,8 @@
+{
+  "contest": 196,
+  "handle": "HollaDieWaldfee",
+  "risk": "",
+  "title": "PaprController.sol: reservoir oracle price equal to 0 allows bypassing NFT liquidations",
+  "issueId": 129,
+  "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/129"
+}
