@@ -17,6 +17,8 @@ The execution cost is : 21208
 
 So clearly its possible to save 42 gas 
 
+Instances (2) :
+
 [File: papr/src/UniswapOracleFundingRateController.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/UniswapOracleFundingRateController.sol)
 
      112:   if (pool != address(0) && !UniswapHelpers.poolsHaveSameTokens(pool, _pool)) revert PoolTokensDoNotMatch();
@@ -29,12 +31,21 @@ So clearly its possible to save 42 gas
 
 ## [GAS-2]  Its possible to use --X instead of X-=1. --X consumes less gas than X-=1. If we need to increase or decrease value by 1 its better --X/++X . As per remix ide gas reports its possible to save 124 gas for executions.
 
+Instances(2) :
+
 [File : papr/src/PaprController.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol)
 
    326:    info.count -= 1;
 
    419:   _vaultInfo[account][collateral.addr].count += 1;
 
+## [GAS-3] Use uint256 instead of uint16 . uint256 consumes less gas than uint16 
+
+A smart contract's gas consumption can be higher if developers use items that are less than 32 bytes in size because the Ethereum Virtual Machine can only handle 32 bytes at a time. In order to increase the element's size to the necessary size, the EVM has to perform additional operations. 
+
+[File : papr/src/PaprController.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol)
+
+      436:  uint16 newCount;
 
 
 
@@ -45,13 +56,4 @@ So clearly its possible to save 42 gas
 
 
 
-GAS-1	Use assembly to check for address(0)	2
-GAS-2	Using bools for storage incurs overhead	3
-GAS-3	Cache array length outside of loop	3
-GAS-4	State variables should be cached in stack variables rather than re-reading them from storage	2
-GAS-5	Use calldata instead of memory for function arguments that do not get mutated	7
-GAS-6	Use Custom Errors	2
-GAS-7	Don't initialize variables with default value	3
-GAS-8	Using private rather than public for constants, saves gas	1
-GAS-9	Use != 0 instead of > 0 for unsigned integer comparison	16
-GAS-10	internal functions not called by the contract should be removed	12
+
