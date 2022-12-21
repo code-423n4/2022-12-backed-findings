@@ -16,11 +16,33 @@ Here is a contract instance partially missing NatSpec:
 
 All internal view and non-view functions
 ```
-## Unspecific compiler version pragma
-The compiler version pragma of [Version.sol](https://github.com/code-423n4/2022-12-forgeries/blob/main/src/utils/Version.sol) is unspecific ^0.8.0 or ^0.8.17. While this often makes sense for libraries to allow them to be included with multiple different versions of an application, it may be a security risk for the actual application implementation itself. A known vulnerable compiler version may accidentally be selected or security tools might fall-back to an older compiler version ending up actually checking a different EVM compilation that is ultimately deployed on the blockchain.
+## Avoid using abi.encodePacked() when dealing with dynamic types in passing result to keccak256()
+As denoted in [Solidity's documentation](https://docs.soliditylang.org/en/v0.8.15/abi-spec.html#non-standard-packed-mode):
 
-Avoid floating pragmas where possible. It is highly recommend pinning a concrete compiler version (latest without security issues) in at least the top-level “deployed” contracts to make it unambiguous which compiler version is being used. Rule of thumb: a flattened source-unit should have at least one non-floating concrete solidity compiler version pragma.
+"If you use keccak256(abi.encodePacked(a, b)) and both a and b are dynamic types, it is easy to craft collisions in the hash value by moving parts of a into b and vice-versa. More specifically, abi.encodePacked("a", "bc") == abi.encodePacked("ab", "c"). If you use abi.encodePacked for signatures, authentication or data integrity, make sure to always use the same types and check that at most one of them is dynamic. Unless there is a compelling reason, abi.encode should be preferred."
 
+Consider using `abi.encode()` that will pad item to 32 bytes to prevent hash collision. If there is only one argument to `abi.encodePacked()`, it can be cast to `bytes32()` instead. And, if all arguments are strings and/or bytes, bytes.concat() could be used instead.
+
+Here is an instance entailed:
+
+[File: ReservoirOracleUnderwriter.sol#L69-L82](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/ReservoirOracleUnderwriter.sol#L69-L82)
+
+```
+            keccak256(
+                abi.encodePacked(
+                    "\x19Ethereum Signed Message:\n32",
+                    // EIP-712 structured-data hash
+                    keccak256(
+                        abi.encode(
+                            keccak256("Message(bytes32 id,bytes payload,uint256 timestamp)"),
+                            oracleInfo.message.id,
+                            keccak256(oracleInfo.message.payload),
+                            oracleInfo.message.timestamp
+                        )
+                    )
+                )
+            ),
+```
 ## `underwritePriceForCollateral()` does not check if ecrecover return value is 0
 In `ReservoirOracleUnderwriter.sol`, `underwritePriceForCollateral()` calls the Solidity ecrecover function directly to verify the given signatures.
 The return value of ecrecover may be 0, which means the signature is invalid, but the check can be bypassed when signer is 0.
