@@ -41,3 +41,47 @@ Use != 0 instead of > 0 for unsigned integer comparisons to save gas.
             _increaseDebt(from, collateral.addr, request.proceedsTo, request.debt, request.oracleInfo);
         }
 ```
+
+## [YO GAS-3] USING BOOLS FOR STORAGE INCURS OVERHEAD
+
+### Handle
+yosuke
+
+## Vulnerability details
+### Impact
+
+### Proof of Concept
+https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol#L188-L204
+
+
+### Recommended Mitigation Steps
+Use uint256(1) and uint256(2) for true/false to avoid a Gwarmaccess (100 gas) for the extra SLOAD, and to avoid Gsset (20000 gas) when changing from ‘false’ to ‘true’, after having been ‘true’ in the past.
+```solidity=
+    function increaseDebtAndSell(
+        address proceedsTo,
+        ERC721 collateralAsset,
+        IPaprController.SwapParams calldata params,
+        ReservoirOracleUnderwriter.OracleInfo calldata oracleInfo
+    ) external override returns (uint256 amountOut) {
+        uint256 hasFee;
+        if(params.swapFeeBips != 0) hasFee = 2;
+        else hasFee = 1;
+
+        (amountOut,) = UniswapHelpers.swap(
+            pool,
+            hasFee == 2 ? address(this) : proceedsTo,
+            !token0IsUnderlying,
+            params.amount,
+            params.minOut,
+            params.sqrtPriceLimitX96,
+            abi.encode(msg.sender, collateralAsset, oracleInfo)
+        );
+
+        if (hasFee == 2) {
+            uint256 fee = amountOut * params.swapFeeBips / BIPS_ONE;
+            underlying.transfer(params.swapFeeTo, fee);
+            underlying.transfer(proceedsTo, amountOut - fee);
+        }
+    }
+```
+
