@@ -1,0 +1,8 @@
+{
+  "contest": 196,
+  "handle": "mookimgo",
+  "risk": "",
+  "title": "underlying token in PaprController can be drained by attacker",
+  "issueId": 231,
+  "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/231"
+}
