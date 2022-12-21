@@ -201,3 +201,9 @@ For instance, the code line below with two division may be refactored as follows
 -        return TickMath.getSqrtRatioAtTick(TickMath.getTickAtSqrtRatio(uint160((token1ONE << 96) / token0ONE)) / 2);
 +        return TickMath.getSqrtRatioAtTick(TickMath.getTickAtSqrtRatio(uint160((token1ONE << 96) / (token0ONE * 2));
 ```
+## Non-fungible nature of NFTs
+It could be impractical at some point to price all NFTs of a collection with the same floor value considering some of them are going to be worth more than the others. 
+
+A typical scenario would be the NFT under collateral appreciated in price significantly due to multi-factorial reasons, and `debt > max` would not allow the user to redeem it particularly when this constituted the only token in the mapping count. When this happened, a technically savvy user could probably rescue it via an atomic flash loan transaction, but most of the time, the user would be helpless in this type of situation.
+
+Consider implementing a rescue plan catering to this group of users where possible, as according to the whitepaper the protocol seems to be reaching out to the higher end collections of the NFTs that could be prone to this deadlock situation.  
