@@ -7,3 +7,7 @@ File: src/NFTEDA/PaperController.sol;
 30 :        uint256 public constant BIPS_ONE = 1e4;
 
 
+35:    bool public immutable override token0IsUnderlying;
+
+    
+ 38:   uint256 public immutable override maxLTV;
