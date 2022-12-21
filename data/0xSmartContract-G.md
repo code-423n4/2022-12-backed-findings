@@ -14,7 +14,7 @@
 | [G-11] | Use a more recent version of solidity |10|
 | [G-12] | The solady Library's Ownable contract is significantly gas-optimized, which can be used  | |
 
-Total 10 issues
+Total 12 issues
 
 ### [G-01] Add `_checkController()` function to `modifier onlyController()`
 
