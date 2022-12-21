@@ -52,6 +52,7 @@ yosuke
 
 ### Proof of Concept
 https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol#L188-L204
+https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol#L213
 
 
 ### Recommended Mitigation Steps
@@ -82,6 +83,36 @@ Use uint256(1) and uint256(2) for true/false to avoid a Gwarmaccess (100 gas) fo
             underlying.transfer(params.swapFeeTo, fee);
             underlying.transfer(proceedsTo, amountOut - fee);
         }
+    }
+```
+```solidity=
+    /// @inheritdoc IPaprController
+    function buyAndReduceDebt(address account, ERC721 collateralAsset, IPaprController.SwapParams calldata params)
+        external
+        override
+        returns (uint256)
+    {
+        uint256 hasFee;
+        if(params.swapFeeBips != 0) hasFee = 2;
+        else hasFee = 1;
+
+        (uint256 amountOut, uint256 amountIn) = UniswapHelpers.swap(
+            pool,
+            account,
+            token0IsUnderlying,
+            params.amount,
+            params.minOut,
+            params.sqrtPriceLimitX96,
+            abi.encode(msg.sender)
+        );
+
+        if (hasFee == 2) {
+            underlying.transfer(params.swapFeeTo, amountIn * params.swapFeeBips / BIPS_ONE);
+        }
+
+        _reduceDebt({account: account, asset: collateralAsset, burnFrom: msg.sender, amount: amountOut});
+
+        return amountOut;
     }
 ```
 
