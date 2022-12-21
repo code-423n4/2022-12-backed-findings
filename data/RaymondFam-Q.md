@@ -97,23 +97,21 @@ Here are some of the instances entailed:
 
 128:        emit SetFundingPeriod(_fundingPeriod);
 ```
-## Sanity checks at the constructor
-Adequate zero address and zero value checks should be implemented at the constructor to avoid accidental error(s) that could result in non-functional calls associated with it particularly when assigning immutable variables.
+## `papr` over `PaprToken(address(papr))`
+`papr` in `PaprController.sol` is already an ERC20 instance inherited from [`UniswapOracleFundingRateController.sol`](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/UniswapOracleFundingRateController.sol#L19). As such casting `papr` into an address type and then reinitializing `PaprToken(address(papr))` is unnecessary.
 
-Here are some of the instances entailed:
+Here are the instances entailed:
 
-[File: UniswapOracleFundingRateController.sol#L34-L42](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/UniswapOracleFundingRateController.sol#L34-L42)
+[File: PaprController.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol)
 
 ```
-    constructor(ERC20 _underlying, ERC20 _papr, uint256 _targetMarkRatioMax, uint256 _targetMarkRatioMin) {
-        underlying = _underlying;
-        papr = _papr;
+387:        PaprToken(address(papr)).burn(address(this), amount);
 
-        targetMarkRatioMax = _targetMarkRatioMax;
-        targetMarkRatioMin = _targetMarkRatioMin;
+476:        PaprToken(address(papr)).mint(mintTo, amount);
 
-        _setFundingPeriod(4 weeks);
-    }
+483:        PaprToken(address(papr)).burn(burnFrom, amount);
+
+540:        PaprToken(address(papr)).burn(address(this), fee);
 ```
 ## Immutable variables should be parameterized in the constructor
 Consider assigning immutable variables in the constructor via parameter inputs instead of directly assigning them with literal values. If the latter approach is preferred, consider declaring them as constants.
