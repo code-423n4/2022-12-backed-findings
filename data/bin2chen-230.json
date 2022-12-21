@@ -1,0 +1,8 @@
+{
+  "contest": 196,
+  "handle": "bin2chen",
+  "risk": "",
+  "title": "buyAndReduceDebt() when swapFeeBips ! =0 does not work",
+  "issueId": 230,
+  "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/230"
+}
