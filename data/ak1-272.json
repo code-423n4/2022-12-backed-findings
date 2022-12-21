@@ -1,0 +1,8 @@
+{
+  "contest": 196,
+  "handle": "ak1",
+  "risk": "",
+  "title": "Protocol faces truncation issue in some places due to solidity integer division",
+  "issueId": 272,
+  "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/272"
+}
