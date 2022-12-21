@@ -49,7 +49,7 @@ uint256 public constant override liquidationPenaltyBips = 1000;
 | Deployment Cost                                | Deployment Size |
 | 10316841                                       | 36108           |
 
-## G-2: ++ and -- cost less then += 1 and -= 1 
+## G-2: ++ and -- cost less GAS then += 1 and -= 1 
 
 - https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol#L419
 - https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol#L326
