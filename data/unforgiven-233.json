@@ -1,0 +1,8 @@
+{
+  "contest": 196,
+  "handle": "unforgiven",
+  "risk": "",
+  "title": "Function increaseDebt/_increaseDebt() don't check that isAllowed is true for this collateral. attacker can create debt for unallowed collaterals if he add collaterals in the past",
+  "issueId": 233,
+  "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/233"
+}
