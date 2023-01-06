@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "evan",
-  "risk": "",
+  "risk": "2",
   "title": "if msg.sender != account, then msg.sender double pays in buyAndReduceDebt",
   "issueId": 275,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/275"
