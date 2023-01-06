@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "unforgiven",
-  "risk": "",
+  "risk": "2",
   "title": "Auction pricing model can't track volatile NFTs because auction price depends on constant start price and not the real-time price of the NFT",
   "issueId": 192,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/192"
