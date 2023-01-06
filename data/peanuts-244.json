@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "peanuts",
-  "risk": "",
+  "risk": "2",
   "title": "NFT is unusable when added as collateral, resulting in missed opportunities",
   "issueId": 244,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/244"
