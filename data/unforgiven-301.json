@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "unforgiven",
-  "risk": "",
+  "risk": "2",
   "title": "function buyAndReduceDebt() spend more underlying token than user specified and also code doesn't check that swapFeeBips is less than BIPS_ONE and user can lose some of his underlying token balance that he gave protocol spending approval",
   "issueId": 301,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/301"
