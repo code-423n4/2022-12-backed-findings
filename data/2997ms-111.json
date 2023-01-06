@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "2997ms",
-  "risk": "",
+  "risk": "2",
   "title": "UNHANDLED RETURN VALUES OF TRANSFER AND TRANSFERFROM",
   "issueId": 111,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/111"
