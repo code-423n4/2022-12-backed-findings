@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "bin2chen",
-  "risk": "",
+  "risk": "3",
   "title": "purchaseLiquidationAuctionNFT() may incorrectly returned the Auction funds to the liquidated user",
   "issueId": 214,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/214"
