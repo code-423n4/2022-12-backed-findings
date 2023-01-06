@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "hansfriese",
-  "risk": "",
+  "risk": "2",
   "title": "Last collateral check is not safe",
   "issueId": 216,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/216"
