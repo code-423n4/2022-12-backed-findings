@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "ayeslick",
-  "risk": "",
+  "risk": "2",
   "title": "Operator can buy papr with PaprController as the debtor.",
   "issueId": 258,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/258"
