@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "bin2chen",
-  "risk": "",
+  "risk": "2",
   "title": "buyAndReduceDebt() incorrectly specifies the recipient of the uniswap",
   "issueId": 220,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/220"
