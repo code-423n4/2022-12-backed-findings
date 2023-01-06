@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "Deivitto",
-  "risk": "",
+  "risk": "2",
   "title": "`PaprController.sol` doesn't support ERC20 Tokens with fee on transfer in `increaseDebtAndSell()`",
   "issueId": 295,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/295"
