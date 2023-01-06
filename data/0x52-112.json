@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "0x52",
-  "risk": "",
+  "risk": "3",
   "title": "PaprController#buyAndReduceDebt will double charge msg.sender if they attempt to pay off debt for other users",
   "issueId": 112,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/112"
