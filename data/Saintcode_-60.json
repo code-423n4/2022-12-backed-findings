@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "Saintcode_",
-  "risk": "",
+  "risk": "2",
   "title": "[DOS] WHEN INTRODUCING A SWAP FEE DIFFERENT FROM 0 ON `buyAndReduceDebt` , THE FUNCTION WILL ALWAYS REVERT",
   "issueId": 60,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/60"
