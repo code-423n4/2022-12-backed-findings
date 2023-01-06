@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "peanuts",
-  "risk": "",
+  "risk": "3",
   "title": "Oracle may return a stale price that is not resistant to flash crashes",
   "issueId": 239,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/239"
