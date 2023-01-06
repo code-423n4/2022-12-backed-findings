@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "unforgiven",
-  "risk": "",
+  "risk": "2",
   "title": "incorrect message signer check in ecrecover() and no validation for oracleSigner which would cause all the unsigned messagess  to be considered asvalid ones",
   "issueId": 266,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/266"
