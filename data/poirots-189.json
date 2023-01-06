@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "poirots",
-  "risk": "",
+  "risk": "2",
   "title": "Can't pay fees when paying debt",
   "issueId": 189,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/189"
