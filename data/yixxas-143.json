@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "yixxas",
-  "risk": "",
+  "risk": "2",
   "title": "Signature scheme does not follow the specific standard used by Trustus",
   "issueId": 143,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/143"
