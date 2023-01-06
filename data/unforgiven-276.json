@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "unforgiven",
-  "risk": "",
+  "risk": "2",
   "title": "function underwritePriceForCollateral() uses message.timestamp > block.timestamp to validate oracle message timestamp but it can create MEV as miners can control block.timestamp and revert some of the user's transactions",
   "issueId": 276,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/276"
