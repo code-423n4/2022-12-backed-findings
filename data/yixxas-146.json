@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "yixxas",
-  "risk": "",
+  "risk": "3",
   "title": "PUNK does not conform to ERC721 standard hence safeTransferFrom from solmate does not work",
   "issueId": 146,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/146"
