@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "B353N",
-  "risk": "",
+  "risk": "2",
   "title": "Missing ZERO CHECK VALIDATION",
   "issueId": 16,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/16"
