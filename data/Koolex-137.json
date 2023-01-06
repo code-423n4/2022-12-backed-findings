@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "Koolex",
-  "risk": "",
+  "risk": "3",
   "title": "Any ether sent to the contract is stuck permanently and can not be withdrawn",
   "issueId": 137,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/137"
