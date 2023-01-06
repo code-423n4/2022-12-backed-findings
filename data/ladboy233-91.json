@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "ladboy233",
-  "risk": "",
+  "risk": "2",
   "title": "Disabled NFT collateral should not be used to mint debt",
   "issueId": 91,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/91"
