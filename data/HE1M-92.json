@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "HE1M",
-  "risk": "",
+  "risk": "2",
   "title": "Grieving attack by preventing users from paying their full debt",
   "issueId": 92,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/92"
