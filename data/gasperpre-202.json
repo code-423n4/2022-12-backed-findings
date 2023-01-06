@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "gasperpre",
-  "risk": "",
+  "risk": "2",
   "title": "`reduceDebt` can be frontrun with `startLiquidationAuction`",
   "issueId": 202,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/202"
