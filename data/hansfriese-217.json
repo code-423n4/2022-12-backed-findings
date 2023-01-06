@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "hansfriese",
-  "risk": "",
+  "risk": "2",
   "title": "Liquidation calculation is wrong",
   "issueId": 217,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/217"
