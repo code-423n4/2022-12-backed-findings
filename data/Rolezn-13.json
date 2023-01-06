@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "Rolezn",
-  "risk": "",
+  "risk": "G",
   "title": "Gas Optimizations",
   "issueId": 13,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/13"
