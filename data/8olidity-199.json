@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "8olidity",
-  "risk": "",
+  "risk": "2",
   "title": "The design logic of `liquidationsLocked` can result in many bad debts not being cleared",
   "issueId": 199,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/199"
