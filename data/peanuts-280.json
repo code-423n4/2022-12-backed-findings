@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "peanuts",
-  "risk": "",
+  "risk": "2",
   "title": "PaprController.removeCollateral() only takes the price of the first collateral to determine whether the NFTs can be withdrawn",
   "issueId": 280,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/280"
