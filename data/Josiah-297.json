@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "Josiah",
-  "risk": "",
+  "risk": "2",
   "title": "A BETTER APPROACH TO REVERTING CODE LINES ON _ADDCOLLATERALTOVAULT() AND _REMOVECOLLATERAL()",
   "issueId": 297,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/297"
