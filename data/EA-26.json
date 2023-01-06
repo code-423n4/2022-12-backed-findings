@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "EA",
-  "risk": "",
+  "risk": "2",
   "title": "Protecting against publicly readable state mapping",
   "issueId": 26,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/26"
