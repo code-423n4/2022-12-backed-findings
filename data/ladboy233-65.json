@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "ladboy233",
-  "risk": "",
+  "risk": "2",
   "title": "Borrowing / Supplying / Liquidating action are halted when NFT oracle service is down or compromised.",
   "issueId": 65,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/65"
