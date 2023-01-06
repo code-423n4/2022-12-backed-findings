@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "unforgiven",
-  "risk": "",
+  "risk": "3",
   "title": "attacker can create un collateralized debt by reentrancy attack during _removeCollateral() by removing all collaterals and liquidating the last one which would set debt to zero. unfair liquidation can happen with reentrancy too",
   "issueId": 242,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/242"
