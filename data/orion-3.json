@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "orion",
-  "risk": "",
+  "risk": "3",
   "title": "underwritePriceForCollateral may returns false price",
   "issueId": 3,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/3"
