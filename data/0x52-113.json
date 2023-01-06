@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "0x52",
-  "risk": "",
+  "risk": "3",
   "title": "buyAndReduceDebt doens't take fees from correct party",
   "issueId": 113,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/113"
