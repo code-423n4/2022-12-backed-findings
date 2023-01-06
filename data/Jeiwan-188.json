@@ -1,7 +1,7 @@
 {
   "contest": 196,
   "handle": "Jeiwan",
-  "risk": "",
+  "risk": "3",
   "title": "Liquidators may pick prices that forces liquidations",
   "issueId": 188,
   "issueUrl": "https://github.com/code-423n4/2022-12-backed-findings/issues/188"
