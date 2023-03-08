@@ -1,3 +1,11 @@
+---
+sponsor: "Backed Protocol"
+slug: "2022-12-backed"
+date: "2023-01-31" 
+title: "Papr contest"
+findings: "https://github.com/code-423n4/2022-12-backed-findings/issues"
+contest: 196
+---
 
 # Overview
 
